@@ -121,6 +121,15 @@
   >
     View paper
   </a>
+
+  <a
+    class="project-toggle"
+    href="https://niconastri.com/files/Climate_Risk_Green_Innovation_Slides.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    View slides
+  </a>
 </div>
   </div>
   <div class="project-details" id="project-1-details" hidden>
@@ -144,24 +153,33 @@
     <h3>ESG Disclosure Mandates and Emissions in Global Value Chains</h3>
 
     <div class="project-meta-row">
-      <button
-        class="project-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="project-2-details"
-      >
-        View abstract
-      </button>
+  <button
+    class="project-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="project-2-details"
+  >
+    View abstract
+  </button>
 
-      <a
-        class="project-toggle"
-        href="https://niconastri.com/files/ESG_Disclosure_Supply_Chains.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View paper
-      </a>
-    </div>
+  <a
+    class="project-toggle"
+    href="https://niconastri.com/files/ESG_Disclosure_Supply_Chains.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    View paper
+  </a>
+
+  <a
+    class="project-toggle"
+    href="https://niconastri.com/files/ESG_Disclosure_Supply_Chains_Slides.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    View slides
+  </a>
+</div>
   </div>
 
   <div class="project-details" id="project-2-details" hidden>
@@ -193,15 +211,6 @@
       >
         View abstract
       </button>
-
-      <a
-        class="project-toggle"
-        href="<paper file link 3>"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View paper
-      </a>
     </div>
   </div>
 
@@ -232,7 +241,7 @@
 
   <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const toggles = document.querySelectorAll(".project-toggle");
+    const toggles = document.querySelectorAll("button.project-toggle");
 
     toggles.forEach(function (toggle) {
       toggle.addEventListener("click", function () {
