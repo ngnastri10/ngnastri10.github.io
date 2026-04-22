@@ -47,61 +47,97 @@
 
     <main class="content">
       <section id="overview" class="front-page">
-        <h2 class="welcome-heading">Welcome!</h2>
+  <h2 class="welcome-heading">Welcome!</h2>
 
-        <p>
-          Hi! I’m Nico Nastri, a PhD candidate in Economics at American University.
-        </p>
+  <p>
+    Hi! I’m Nico Nastri, a PhD candidate in Economics at American University.
+  </p>
 
-        <p>
-          My work examines how firms, industries, and countries respond to environmental
-          risks and policy incentives. Working at the intersection of environmental economics,
-          trade, innovation, and energy policy, I use applied econometrics and causal inference
-          to study policy-relevant questions.
-        </p>
+  <p>
+    My work examines how firms, industries, and countries respond to environmental
+    risks and policy incentives. Working at the intersection of environmental economics,
+    trade, innovation, and energy policy, I use applied econometrics and causal inference
+    to study policy-relevant questions.
+  </p>
 
-        <p>
-          I am pursuing opportunities in the private sector, think tanks, consulting,
-          and international organizations.
-        </p>
+  <p>
+    I am pursuing opportunities in the private sector, think tanks, consulting,
+    and international organizations.
+  </p>
 
-        <div class="front-block">
-          <h3>Interests</h3>
-          <ul class="clean-list">
-            <li>Environmental Economics</li>
-            <li>Trade and Supply Chains</li>
-            <li>Innovation and Technological Change</li>
-            <li>Energy and Infrastructure</li>
-            <li>Policy Evaluation</li>
-            <li>Applied Econometrics</li>
-          </ul>
-        </div>
+  <div class="front-columns">
+    <div class="front-block">
+      <h3>Interests</h3>
+      <ul class="clean-list">
+        <li>Environmental Economics</li>
+        <li>Innovation and Technological Change</li>
+        <li>Energy and Infrastructure</li>
+        <li>Trade and Supply Chains</li>
+      </ul>
+    </div>
 
-        <div class="front-block">
-          <h3>Education</h3>
-          <ul class="education-list">
-            <li>
-              <strong>PhD in Economics</strong><br>
-              American University
-            </li>
-            <li>
-              <strong>[Your previous degree]</strong><br>
-              [Your previous institution]
-            </li>
-          </ul>
-        </div>
-      </section>
+    <div class="front-block">
+      <h3>Education</h3>
+      <ul class="education-list">
+        <li>
+          <strong>PhD in Economics - 2027 (Expected)</strong><br>
+          American University
+        </li>
+        <li>
+          <strong>MA in Political Economy - 2019</strong><br>
+          Georgetown University
+        </li>
+        <li>
+          <strong>BA in Economics - 2016</strong><br>
+          Boston University
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
       <section id="projects">
         <h2>Selected Projects</h2>
 
         <div class="project">
-          <h3>Project Title One</h3>
-          <p>
-            Add a short description of the project here. Focus on the question,
-            your method, and why it matters for policy or business decisions.
-          </p>
-        </div>
+  <div class="project-header">
+    <h3>Climate Risk, Innovation, and the Diffusion of Green Technologies</h3>
+
+    <div class="project-meta-row">
+  <button
+    class="project-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="project-1-details"
+  >
+    View abstract
+  </button>
+
+  <a
+    class="project-toggle"
+    href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6516621"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    View paper
+  </a>
+</div>
+  </div>
+  <div class="project-details" id="project-1-details" hidden>
+    <p><strong>Abstract.</strong> Climate technologies are central to addressing rising climate risks, yet existing research has largely emphasized policy as the primary driver of innovation. We examine whether climate vulnerability itself shapes innovation incentives as an additional channel alongside policy. Using patent data for mitigation and adaptation technologies in 77 countries from 1995-2021, we exploit within-country variation in vulnerability while controlling for policy and distinguishing key margins of heterogeneity, including between domestic invention and international technology diffusion. Climate vulnerability does not generate a uniform response. High-income economies capable of influencing global emissions shift innovation towards mitigation. Middleincome countries face constraints that limit access to foreign adaptation technologies precisely when adaptation needs are greatest, and the increase in domestic innovation-often reflecting the context-specific nature of adaptation technologies-is not sufficient to offset this decline. Falsification tests rule out competing mechanisms and provide evidence of an independent association between climate vulnerability and innovation, pointing to a previously underexplored channel shaping technological change.</p>
+
+    <div class="project-links">
+      <a
+        class="project-link"
+        href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6516621"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open on SSRN
+      </a>
+    </div>
+  </div>
+</div>
 
         <div class="project">
           <h3>Project Title Two</h3>
@@ -125,5 +161,31 @@
       </section>
     </main>
   </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggles = document.querySelectorAll(".project-toggle");
+
+    toggles.forEach(function (toggle) {
+      toggle.addEventListener("click", function () {
+        const panelId = toggle.getAttribute("aria-controls");
+        const panel = document.getElementById(panelId);
+        const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+        if (isOpen) {
+          panel.hidden = true;
+          panel.classList.remove("is-opening");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.textContent = "View abstract";
+        } else {
+          panel.hidden = false;
+          panel.classList.add("is-opening");
+          toggle.setAttribute("aria-expanded", "true");
+          toggle.textContent = "Hide abstract";
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
