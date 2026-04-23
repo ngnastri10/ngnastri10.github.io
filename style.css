@@ -408,3 +408,9 @@ a.project-toggle:active {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+.affiliation {
+  margin: -20px 0 18px 0;
+  color: #666666;
+  font-size: 0.95rem;
+}
