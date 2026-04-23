@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -91,36 +92,53 @@ h1 {
 
 .sidebar-links {
   display: flex;
-  gap: 14px;
-  margin-top: 4px;
+  gap: 18px;
+  margin-top: 10px;
   align-items: center;
   justify-content: center;
 }
 
 .icon-link {
-  width: 40px;
-  height: 40px;
-  border: 1px solid #d8d8d8;
-  border-radius: 999px;
+  width: 54px;
+  height: 54px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #003366;
   text-decoration: none;
   background: #ffffff;
-  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  border: 1px solid #d8d8d8;
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .icon-link:hover {
+  transform: translateY(-1px);
+  opacity: 1;
   background: #f1f5f9;
   border-color: #bfc9d4;
-  transform: translateY(-1px);
 }
 
 .icon-link svg {
-  width: 18px;
-  height: 18px;
+  width: 30px;
+  height: 30px;
+  display: block;
   fill: currentColor;
+}
+
+.cv-link {
+  width: 54px;
+  height: 54px;
+  padding: 0;
+}
+
+.cv-mark {
+  display: inline-block;
+  font-size: 1.3rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #003366;
 }
 
 .content {
@@ -209,65 +227,22 @@ ul {
   padding-left: 20px;
 }
 
-@media (max-width: 900px) {
-  html, body {
-    height: auto;
-  }
-
-  body {
-    overflow: auto;
-    display: block;
-  }
-
-  .topbar {
-    padding: 16px 20px;
-  }
-
-  .topbar-nav {
-    gap: 18px;
-    flex-wrap: wrap;
-  }
-
-  .main-layout {
-    grid-template-columns: 1fr;
-    height: auto;
-  }
-
-  .sidebar {
-    border-right: none;
-    border-bottom: 1px solid #dddddd;
-  }
-
-  .sidebar-inner {
-    height: auto;
-    padding: 28px 20px;
-  }
-
-  .content {
-    overflow: visible;
-    padding: 30px 20px;
-  }
-
-  .front-columns {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
-  .profile-photo {
-    max-width: 160px;
-  }
-}
 .project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 18px;
+  display: block;
 }
 
 .project-subtitle {
-  margin: 4px 0 0 0;
+  margin: 0;
   color: #666666;
   font-size: 0.95rem;
+}
+
+.project-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
 }
 
 .project-toggle {
@@ -335,25 +310,98 @@ a.project-toggle:active {
 }
 
 @media (max-width: 900px) {
-  .project-header {
-    flex-direction: column;
-    align-items: flex-start;
+  html,
+  body {
+    height: auto;
+  }
+
+  body {
+    overflow: auto;
+    display: block;
+  }
+
+  .topbar {
+    padding: 16px 20px;
+  }
+
+  .topbar-nav {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .main-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .sidebar-inner {
+    height: auto;
+    padding: 28px 20px;
+  }
+
+  .profile-photo {
+    max-width: 160px;
+  }
+
+  .sidebar-links {
+  gap: 16px;
+}
+
+.icon-link,
+.cv-link {
+  width: 50px;
+  height: 50px;
+}
+
+.icon-link svg {
+  width: 28px;
+  height: 28px;
+}
+
+.cv-mark {
+  font-size: 1.2rem;
+}
+
+  .content {
+    overflow: visible;
+    padding: 30px 20px;
+  }
+
+  .front-columns {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .project-meta-row {
+    gap: 10px;
   }
 }
-.project-header {
-  display: block;
+
+.email-icon {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.project-meta-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 4px;
+.email-icon {
+  width: 30px;
+  height: 30px;
 }
 
-.project-subtitle {
-  margin: 0;
-  color: #666666;
-  font-size: 0.95rem;
+.email-icon rect,
+.email-icon path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
