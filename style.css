@@ -123,6 +123,9 @@ h1 {
   width: 30px;
   height: 30px;
   display: block;
+}
+
+.icon-link svg:not(.email-icon) {
   fill: currentColor;
 }
 
