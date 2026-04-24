@@ -17,7 +17,9 @@
   <a href="#projects">Selected Projects</a>
 
   <div class="nav-dropdown">
-    <span class="nav-dropdown-toggle">Resume / CV</span>
+    <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+    Resume / CV
+  </button>
     <div class="nav-dropdown-menu">
       <a href="https://niconastri.com/Nastri-Resume-2026/" target="_blank" rel="noopener noreferrer">Resume</a>
       <a href="https://niconastri.com/files/Nastri-CV-2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
@@ -277,6 +279,56 @@
         }
       });
     });
+
+    const dropdown = document.querySelector(".nav-dropdown");
+    const dropdownToggle = document.querySelector(".nav-dropdown-toggle");
+    const dropdownLinks = document.querySelectorAll(".nav-dropdown-menu a");
+
+    function isMobile() {
+      return window.innerWidth <= 900;
+    }
+
+    function closeDropdown() {
+      if (!dropdown || !dropdownToggle) return;
+      dropdown.classList.remove("is-open");
+      dropdownToggle.setAttribute("aria-expanded", "false");
+    }
+
+    if (dropdown && dropdownToggle) {
+      dropdownToggle.addEventListener("click", function (event) {
+        if (!isMobile()) return;
+        event.stopPropagation();
+
+        const isOpen = dropdown.classList.contains("is-open");
+        if (isOpen) {
+          closeDropdown();
+        } else {
+          dropdown.classList.add("is-open");
+          dropdownToggle.setAttribute("aria-expanded", "true");
+        }
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!isMobile()) return;
+        if (!dropdown.contains(event.target)) {
+          closeDropdown();
+        }
+      });
+
+      dropdownLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (isMobile()) {
+            closeDropdown();
+          }
+        });
+      });
+
+      window.addEventListener("resize", function () {
+        if (!isMobile()) {
+          closeDropdown();
+        }
+      });
+    }
   });
 </script>
 </body>
