@@ -16,13 +16,13 @@
     <nav class="topbar-nav">
   <a href="#projects">Selected Projects</a>
 
-  <details class="nav-dropdown">
+  <div class="nav-dropdown">
     <summary class="nav-dropdown-toggle">Resume / CV</summary>
     <div class="nav-dropdown-menu">
       <a href="https://niconastri.com/Nastri-Resume-2026/" target="_blank" rel="noopener noreferrer">Resume</a>
       <a href="https://niconastri.com/files/Nastri-CV-2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
     </div>
-  </details>
+  </div>
 </nav>
   </div>
 </header>
@@ -257,7 +257,6 @@
   <script>
   document.addEventListener("DOMContentLoaded", function () {
     const toggles = document.querySelectorAll("button.project-toggle");
-    const navDropdowns = document.querySelectorAll(".nav-dropdown");
 
     toggles.forEach(function (toggle) {
       toggle.addEventListener("click", function () {
@@ -277,22 +276,6 @@
           toggle.textContent = "Hide abstract";
         }
       });
-    });
-
-    document.addEventListener("click", function (event) {
-      navDropdowns.forEach(function (dropdown) {
-        if (!dropdown.contains(event.target)) {
-          dropdown.removeAttribute("open");
-        }
-      });
-    });
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        navDropdowns.forEach(function (dropdown) {
-          dropdown.removeAttribute("open");
-        });
-      }
     });
   });
 </script>
