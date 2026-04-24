@@ -17,9 +17,9 @@
   <a href="#projects">Selected Projects</a>
 
   <div class="nav-dropdown">
-    <button type="button" class="nav-dropdown-toggle" aria-expanded="false">
+    <span class="nav-dropdown-toggle" role="button" aria-expanded="false" tabindex="0">
     Resume / CV
-  </button>
+  </span>
     <div class="nav-dropdown-menu">
       <a href="https://niconastri.com/Nastri-Resume-2026/" target="_blank" rel="noopener noreferrer">Resume</a>
       <a href="https://niconastri.com/files/Nastri-CV-2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
@@ -294,17 +294,27 @@
       dropdownToggle.setAttribute("aria-expanded", "false");
     }
 
-    if (dropdown && dropdownToggle) {
-      dropdownToggle.addEventListener("click", function (event) {
-        if (!isMobile()) return;
-        event.stopPropagation();
+    function toggleDropdown(event) {
+      if (!isMobile()) return;
+      event.preventDefault();
+      event.stopPropagation();
 
-        const isOpen = dropdown.classList.contains("is-open");
-        if (isOpen) {
-          closeDropdown();
-        } else {
-          dropdown.classList.add("is-open");
-          dropdownToggle.setAttribute("aria-expanded", "true");
+      const isOpen = dropdown.classList.contains("is-open");
+      if (isOpen) {
+        closeDropdown();
+      } else {
+        dropdown.classList.add("is-open");
+        dropdownToggle.setAttribute("aria-expanded", "true");
+      }
+    }
+
+    if (dropdown && dropdownToggle) {
+      dropdownToggle.addEventListener("click", toggleDropdown);
+
+      dropdownToggle.addEventListener("keydown", function (event) {
+        if (!isMobile()) return;
+        if (event.key === "Enter" || event.key === " ") {
+          toggleDropdown(event);
         }
       });
 
